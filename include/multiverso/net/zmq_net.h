@@ -17,7 +17,7 @@
 
 namespace multiverso {
 
-MV_DEFINE_string(machine_file, "", "path of machine file");
+MV_DEFINE_string(machine_file, "machine_list", "path of machine file");
 MV_DEFINE_int(port, 55555 , "port used to communication");
 
 class ZMQNetWrapper : public NetInterface {
