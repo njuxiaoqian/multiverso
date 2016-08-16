@@ -138,7 +138,7 @@ public:
   int size() const override { return size_; }
   std::string name() const override { return "ZeroMQ"; }
 
-  int Send(MessagePtr& msg) override {
+  size_t Send(MessagePtr& msg) override {
     int size = 0;
     int dst = msg->dst();
     void* socket = senders_[dst].socket;
@@ -162,7 +162,7 @@ public:
     return size;
   }
 
-  int Recv(MessagePtr* msg_ptr) override {
+  size_t Recv(MessagePtr* msg_ptr) override {
     if (!msg_ptr->get()) msg_ptr->reset(new Message());
     int size = 0;
     int recv_size;
